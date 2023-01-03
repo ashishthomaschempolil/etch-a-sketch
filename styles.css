@@ -1,11 +1,21 @@
+:root {
+    --color-primary: black;
+    --color-secondary: white;
+    --color-tertiary: #e5e7e6;
+    --color-quaternary: black;
+}
+
 body {
-    background-color: #5D675B;
-    color: #ABE188;
+    background-color: var(--color-tertiary);
+    color: var(--color-quaternary);
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     margin: 0;
     padding: 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* this will make the body take up the entire screen */
 }
 
 .header{
@@ -26,6 +36,7 @@ body {
     justify-content: space-between;
     gap: 20px;
     padding: 20px;
+    flex: 1; /* this will make the body take up the remaining space */
 }
 
 /* Area containing buttons */
@@ -47,9 +58,9 @@ body {
 
 button {
     cursor: pointer;
-    color: #F7EF99;
-    background-color: #F78E69;
-    border: 1px solid #F78E69;
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
     border-radius: 5px;
     padding: 20px;
     font-size: 1rem;
@@ -58,14 +69,14 @@ button {
 }
 
 button:hover {
-    color: #F7EF99;
-    background-color: #F78E69;
-    box-shadow: -2px -2px 10px #ffffff; 
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+    box-shadow: -2px -2px 10px var(--color-secondary); 
 }
 
 
 .sketch-area {
-    background-color: #5D675B;
+    background-color: var(--color-tertiary);
     padding: 20px;
 }
 
@@ -76,12 +87,22 @@ button:hover {
     grid-template-rows: repeat(16, 1fr);
     height: 575px;
     width: 575px;
-    border: 5px solid black;
+    border: 5px solid dimgrey;
     border-radius: 5px;
 }
 
 .sketch-grid .grid-item {
-    background-color: #F7EF99;
-    border: 1px solid #F78E69;
+    background-color: var(--color-secondary);
+    border: 1px solid dimgray;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-secondary);
+    text-shadow: 0 0 5px var(--color-primary);
 }
 

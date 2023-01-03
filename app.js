@@ -1,15 +1,13 @@
 const sketchGrid = document.getElementById('sketch-grid');
+const rainbow = ['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red'];
 
-let n = 50;
-// sketchGrid.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
-// sketchGrid.style.gridTemplateRows = `repeat(${n}, 1fr)`;
+// get the default color of the sketch grid
+const styles = getComputedStyle(document.documentElement); // get the root element
+const sketchGridDefaultColor = styles.getPropertyValue('--color-secondary');
 
-// // create a grid of div of n*n size in square shape
-// for (let i = 0; i < n*n; i++) {
-//     const div = document.createElement('div');
-//     div.classList.add('grid-item');
-//     sketchGrid.appendChild(div);
-// }
+
+let n = 16;
+
 function updateGrid(n){
     // clear the grid
     sketchGrid.innerHTML = '';
@@ -27,4 +25,40 @@ function updateGrid(n){
 }
 
 updateGrid(n);
+console.log(sketchGridDefaultColor);
 
+function getRandomColor(rainbow){
+    return rainbow[Math.floor(Math.random() * rainbow.length)];
+}
+
+function clearGrid(){
+    divs = document.querySelectorAll('.grid-item');
+    divs.forEach((div) => {
+        div.setAttribute('style', `background-color: ${sketchGridDefaultColor};`);
+    });
+}
+
+function changeSquareColor(colors){
+    divs = document.querySelectorAll('.grid-item');
+    divs.forEach((div) => {
+        div.addEventListener('mouseover', () => {
+            color = getRandomColor(colors);
+            div.setAttribute('style', `background-color: ${color}`);
+        });
+    });
+}
+
+buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if (button.id == 'clear'){
+            clearGrid();
+        } else if (button.id == 'rainbow'){
+            changeSquareColor(rainbow);
+        } else if (button.id == 'black'){
+            changeSquareColor(['black']);
+        } else if (button.id == 'eraser'){
+            changeSquareColor([sketchGridDefaultColor]);
+        }
+    });
+});
