@@ -1,0 +1,87 @@
+body {
+    background-color: #5D675B;
+    color: #ABE188;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    max-width: 100%;
+    height: 50%;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Area containing buttons */
+.options-area { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    flex: 1;
+}
+
+.sketch-area {
+    flex:3;
+    padding: 20px;
+}
+
+button {
+    cursor: pointer;
+    color: #F7EF99;
+    background-color: #F78E69;
+    border: 1px solid #F78E69;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 1rem;
+    height: 5rem;
+    width: 7rem;
+}
+
+button:hover {
+    color: #F7EF99;
+    background-color: #F78E69;
+    box-shadow: -2px -2px 10px #ffffff; 
+}
+
+
+.sketch-area {
+    background-color: #5D675B;
+    padding: 20px;
+}
+
+/* set a fixed height and width for the grid so that it does not become scrollable*/
+.sketch-grid {
+    display: inline-grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    height: 575px;
+    width: 575px;
+    border: 5px solid black;
+    border-radius: 5px;
+}
+
+.sketch-grid .grid-item {
+    background-color: #F7EF99;
+    border: 1px solid #F78E69;
+}
+
