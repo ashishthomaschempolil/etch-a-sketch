@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch A Sketch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">  
     <link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/microsoft/319/artist-palette_1f3a8.png" type="image/x-icon"> <!-- Palette Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Github -->
@@ -21,8 +24,11 @@
             <button id="rainbow">Rainbow</button>
             <button id="eraser">Eraser</button>
             <button id="clear">Clear</button>
+            <div class="change-grid-size">
+                <h3>Change Grid Size</h3>
+                <input type="number" id="grid-size" placeholder="Enter grid size, default is 16" value="16" min="1" max="100">
+            </div>
         </div>
-        <!-- <h1>Sketch Area</h1> -->
         <div class="sketch-area" id="sketch-area">
             <div class="sketch-grid" id="sketch-grid">    
             </div>

@@ -5,8 +5,19 @@ const rainbow = ['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red']
 const styles = getComputedStyle(document.documentElement); // get the root element
 const sketchGridDefaultColor = styles.getPropertyValue('--color-secondary');
 
+// get the size of the grid
+const gridSize = document.getElementById('grid-size');
+let n = gridSize.value;
 
-let n = 16;
+// update the grid size
+gridSize.addEventListener('change', () => {
+    n = gridSize.value;
+    if (n < 1 || n > 100){
+        alert('Please enter a value between 1 and 100');
+        return;
+    }
+    updateGrid(n);
+});
 
 function updateGrid(n){
     // clear the grid
