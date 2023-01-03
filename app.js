@@ -36,7 +36,6 @@ function updateGrid(n){
 }
 
 updateGrid(n);
-console.log(sketchGridDefaultColor);
 
 function getRandomColor(rainbow){
     return rainbow[Math.floor(Math.random() * rainbow.length)];
